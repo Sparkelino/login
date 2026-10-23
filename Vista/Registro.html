@@ -1,0 +1,54 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>CLUB ADSO</title>
+        <link rel="stylesheet" href="../Assets/estilos.css">
+    </head>
+    <body>
+        <div>
+            <h2>Registro de Asociado - Acerias</h2>
+
+            <form id="formRegistro" action="" method="POST">
+                <div class = "grupo-input">
+                    <label>Ingresar Documento:</label>
+                    <input id="documento" type="number" placeholder="ejemplo: 1026564923">
+                </div>
+                <div class = "grupo-input">
+                    <label>Nombres: </label>
+                    <input type="text" id="nombre" required placeholder="Ingrese nombres completos">
+                </div>
+                <div class = "grupo-input">
+                    <label>Apellidos: </label>
+                    <input type="text" id="apellido" required placeholder="Ingrese apellidos completos">
+                </div>
+                <div class = "grupo-input">
+                    <label>Fecha de nacimiento: </label>
+                    <input type="date" id="fechaNacimiento" required>
+                </div>
+                <div class = "grupo-input">
+                    <label>Dirección de residencia: </label>
+                    <input type="text" id="direccionResidencia" required placeholder="Ej: Carrera 93 D #71-49 sur">
+                </div>
+                <div class = "grupo-input">
+                    <label>Ciudad: </label>
+                    <input type="text" id="ciudad" required placeholder="Sogamoso">
+                </div>
+                <div class = "grupo-input">
+                    <label>Telefono: </label>
+                    <input type="text" id="telefono" required placeholder="Ej: 3411221">
+                </div>
+                <div class = "grupo-input">
+                    <label>Genero: </label>
+                    <input type="radio" id="femenino" values="femenino">
+                    <label>FEMENINO</label>
+                    <input type="radio" id="masculino" values="Masculino">
+                    <label>MASCULINO</label>
+                    <input type="radio" id="otro" values="Otro">
+                    <label>OTRO</label>
+                </div>
+
+            </form>
+        </div>
+
+    </body>
+</html>

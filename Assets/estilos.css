@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'segoe ui', Tahoma, Geneva, Verdana, sans-serif
+}
+body{
+    background-color:rgb(45, 4, 48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+h2{
+    color: rgb(22, 164, 27);
+    margin-bottom: 20px;
+    font-size:24px;
+    text-align: center;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.grupo-input {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.grupo-botones{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
