@@ -1,54 +1,245 @@
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>CLUB ADSO</title>
-        <link rel="stylesheet" href="../Assets/estilos.css">
-    </head>
-    <body>
-        <div>
-            <h2>Registro de Asociado - Acerias</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | William Gerald Perez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-            <form id="formRegistro" action="" method="POST">
-                <div class = "grupo-input">
-                    <label>Ingresar Documento:</label>
-                    <input id="documento" type="number" placeholder="ejemplo: 1026564923">
-                </div>
-                <div class = "grupo-input">
-                    <label>Nombres: </label>
-                    <input type="text" id="nombre" required placeholder="Ingrese nombres completos">
-                </div>
-                <div class = "grupo-input">
-                    <label>Apellidos: </label>
-                    <input type="text" id="apellido" required placeholder="Ingrese apellidos completos">
-                </div>
-                <div class = "grupo-input">
-                    <label>Fecha de nacimiento: </label>
-                    <input type="date" id="fechaNacimiento" required>
-                </div>
-                <div class = "grupo-input">
-                    <label>Dirección de residencia: </label>
-                    <input type="text" id="direccionResidencia" required placeholder="Ej: Carrera 93 D #71-49 sur">
-                </div>
-                <div class = "grupo-input">
-                    <label>Ciudad: </label>
-                    <input type="text" id="ciudad" required placeholder="Sogamoso">
-                </div>
-                <div class = "grupo-input">
-                    <label>Telefono: </label>
-                    <input type="text" id="telefono" required placeholder="Ej: 3411221">
-                </div>
-                <div class = "grupo-input">
-                    <label>Genero: </label>
-                    <input type="radio" id="femenino" values="femenino">
-                    <label>FEMENINO</label>
-                    <input type="radio" id="masculino" values="Masculino">
-                    <label>MASCULINO</label>
-                    <input type="radio" id="otro" values="Otro">
-                    <label>OTRO</label>
-                </div>
+<body>
 
-            </form>
+    <!-- Navegación -->
+    <nav class="barra-menu">
+        <a href="#inicio" class="logo">JCM<span>.</span></a>
+
+        <div class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Sección Principal -->
+    <section id="inicio" class="principal">
+
+        <div class="contenido">
+            <p class="etiqueta">PORTAFOLIO PERSONAL</p>
+
+            <h1>
+                Mi portafolio
+                <span>web.</span>
+            </h1>
+
+            <div class="linea"></div>
+
+            <h2>William Gerald Perez</h2>
+
+            <p class="descripcion">
+                Desarrollo Web · Análisis de Software · Programación
+            </p>
+
+            <a href="#proyectos" class="boton">
+                Ver mis proyectos →
+            </a>
         </div>
 
-    </body>
+        <div class="codigo">
+            <p class="comentario">// Bienvenido a mi portafolio</p>
+            <p><span class="palabra">const</span> desarrollador = {</p>
+            <p class="sangria">
+                nombre: <span class="texto">'Julio César'</span>,
+            </p>
+            <p class="sangria">
+                formacion: <span class="texto">'Ing. de Sistemas (6.º sem) & ADSO'</span>,
+            </p>
+            <p class="sangria">
+                enfoque: <span class="texto">'Desarrollo Web & Soluciones Software'</span>
+            </p>
+            <p>};</p>
+        </div>
+
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="seccion">
+
+        <p class="etiqueta">CONÓCEME</p>
+        <h2>Sobre mí</h2>
+
+        <p class="texto-seccion">
+            ¡Hola! Soy <strong>Julio César Manrique Buitrago</strong>. Actualmente me encuentro cursando el 6.º semestre de 
+            <strong>Ingeniería de Sistemas</strong> y complementando mi formación con un tecnólogo en 
+            <strong>Análisis y Desarrollo de Software (ADSO)</strong>. Me apasiona el desarrollo de páginas y aplicaciones web, 
+            así como la resolución de problemas mediante software eficiente. Constantemente busco aprender nuevas tecnologías 
+            y mejorar mis habilidades prácticas.
+        </p>
+
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="seccion">
+
+        <p class="etiqueta">LO QUE ESTOY APRENDIENDO Y APLICANDO</p>
+        <h2>Mis habilidades</h2>
+
+        <div class="lista-habilidades">
+            <div class="habilidad">HTML5</div>
+            <div class="habilidad">CSS3</div>
+            <div class="habilidad">JavaScript</div>
+            <div class="habilidad">Python</div>
+            <div class="habilidad">Análisis y Diseño de Software</div>
+            <div class="habilidad">Trabajo en Equipo</div>
+        </div>
+
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="proyectos">
+
+        <p class="etiqueta">MI TRABAJO</p>
+        <h2>Mis proyectos</h2>
+
+        <p class="subtitulo">
+            Algunos de los sistemas que he desarrollado
+        </p>
+
+        <div class="contenedor-proyectos">
+
+            <!-- Proyecto 1 -->
+            <div class="tarjeta-proyecto">
+
+                <div class="carrusel">
+
+                    <img src="tienda/inicio.jpeg" class="imagen-carrusel activa" alt="Inicio de La aventura de estrellitas">
+                    <img src="tienda/menu.jpeg" class="imagen-carrusel" alt="Menú de La aventura de estrellitas">
+
+                    <button class="flecha anterior" onclick="cambiarImagen(this, -1)" aria-label="Imagen anterior">
+                        &#10094;
+                    </button>
+
+                    <button class="flecha siguiente" onclick="cambiarImagen(this, 1)" aria-label="Imagen siguiente">
+                        &#10095;
+                    </button>
+
+                    <span class="numero-imagen">01 / 02</span>
+
+                </div>
+
+                <div class="info-proyecto">
+
+                    <span class="categoria">SISTEMA POS</span>
+
+                    <h3>La aventura de estrellitas</h3>
+
+                    <p>
+                        Sistema POS desarrollado para una tienda de mascotas. Integra gestión de ventas, 
+                        administración de productos y control contable para la empresa.
+                    </p>
+
+                    <div class="tecnologias">
+                        <span>Python</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="tarjeta-proyecto">
+
+                <div class="carrusel">
+
+                    <img src="elite/principal.jpeg" class="imagen-carrusel activa" alt="Página principal de Elite Fitness">
+                    <img src="elite/principal2.jpeg" class="imagen-carrusel" alt="Segunda pantalla de Elite Fitness">
+                    <img src="elite/acceso.jpeg" class="imagen-carrusel" alt="Acceso a Elite Fitness">
+                    <img src="elite/planes.jpeg" class="imagen-carrusel" alt="Planes de Elite Fitness">
+
+                    <button class="flecha anterior" onclick="cambiarImagen(this, -1)" aria-label="Imagen anterior">
+                        &#10094;
+                    </button>
+
+                    <button class="flecha siguiente" onclick="cambiarImagen(this, 1)" aria-label="Imagen siguiente">
+                        &#10095;
+                    </button>
+
+                    <span class="numero-imagen">01 / 04</span>
+
+                </div>
+
+                <div class="info-proyecto">
+
+                    <span class="categoria">GESTIÓN DEPORTIVA</span>
+
+                    <h3>Elite Fitness</h3>
+
+                    <p>
+                        Sistema de administración de gimnasio enfocado en la gestión de usuarios, 
+                        consulta de planes de suscripción y seguimiento del progreso físico.
+                    </p>
+
+                    <div class="tecnologias">
+                        <span>Python</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="seccion contacto">
+
+        <p class="etiqueta">HABLEMOS</p>
+        <h2>Contacto</h2>
+
+        <p>
+            ¿Quieres conocer más sobre mi trabajo o colaborar en un proyecto?
+        </p>
+
+        <a href="mailto:juliocesarmanrique17@gmail.com" class="boton">
+            juliocesarmanrique17@gmail.com
+        </a>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>© 2026 Julio César Manrique Buitrago · Portafolio Personal</p>
+    </footer>
+
+    <!-- JS Carrusel -->
+    <script>
+        function cambiarImagen(boton, direccion) {
+            const carrusel = boton.parentElement;
+            const imagenes = carrusel.querySelectorAll(".imagen-carrusel");
+            const contador = carrusel.querySelector(".numero-imagen");
+
+            let actual = 0;
+
+            imagenes.forEach((imagen, indice) => {
+                if (imagen.classList.contains("activa")) {
+                    actual = indice;
+                }
+            });
+
+            imagenes[actual].classList.remove("activa");
+
+            actual = (actual + direccion + imagenes.length) % imagenes.length;
+
+            imagenes[actual].classList.add("activa");
+
+            contador.textContent = 
+                String(actual + 1).padStart(2, "0") + " / " + String(imagenes.length).padStart(2, "0");
+        }
+    </script>
+
+</body>
 </html>
