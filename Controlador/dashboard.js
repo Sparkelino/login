@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()  => {
+document.addEventListener('DOMContentLoaded', () => {
     const logueado = localStorage.getItem('logueado');
     
     if (logueado !== 'true') {
@@ -9,19 +9,24 @@ document.addEventListener('DOMContentLoaded', ()  => {
     const nombre = localStorage.getItem('nombre');
     const rol = localStorage.getItem('rol');
 
-    document.getElementById('nombreUsuario').textContent = nombre;
+    const nombreUsuarioEl = document.getElementById('nombreUsuario');
+    if (nombreUsuarioEl && nombre) {
+        nombreUsuarioEl.textContent = `${nombre} (${rol})`;
+    }
+
+    const contenedorAdmin = document.getElementById('tarjetaAdmin');
+    const contenedorAsociado = document.getElementById('tarjetaAsociado');
 
     if (rol === 'admin') {
-        document.getElementById('tarjeta Admin').classList.remove('d-none');
-        document.getElementById('tarjeta Asociado').classList.add('d-none');
-    }else{
-        document.getElementById('tarjeta Admin').classList.add('d-none');
-        document.getElementById('tarjeta Asociado').classList.add('d-none');
+        if (contenedorAdmin) contenedorAdmin.classList.remove('d-none');
+        if (contenedorAsociado) contenedorAsociado.classList.add('d-none');
+    } else {
+        if (contenedorAdmin) contenedorAdmin.classList.add('d-none');
+        if (contenedorAsociado) contenedorAsociado.classList.remove('d-none');
     }    
 });
 
-
 function cerrarSesion() {
     localStorage.clear();
-    window.location.href = '../Vista/login.html';
+    window.location.href = 'login.html';
 }
