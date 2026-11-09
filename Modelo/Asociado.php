@@ -1,9 +1,8 @@
 <?php
 require_once __DIR__ . '/../Config/conexion.php';
 
-
 class Asociado
- {
+{
     private $documento;
     private $nombres;
     private $apellidos;
@@ -13,6 +12,7 @@ class Asociado
     private $ciudad;
     private $telefono;
     private $email;
+    private $passwordHash;
 
     private $conexion;
 
@@ -27,15 +27,16 @@ class Asociado
         $this->ciudad = $datos['ciudad'];
         $this->telefono = $datos['telefono'];
         $this->email = $datos['email'];
+        $this->passwordHash = password_hash($datos['password'], PASSWORD_DEFAULT);
 
-        $conexionDB = new conexion();
+        $conexionDB = new Conexion();
         $this->conexion = $conexionDB->conectar();  
     }
 
     public function guardar() 
     {
-        $sql = "INSERT INTO asociados (documento, nombres, apellidos, fechaNacimiento, genero, direccionResidencia, ciudad, telefono, email) VALUES (:documento, :nombres, :apellidos, :fechaNacimiento, :genero, :direccionResidencia, :ciudad, :telefono, :email)";
-       $consulta = $this->conexion->prepare($sql);
+        $sql = "INSERT INTO asociados (documento, nombres, apellidos, fechaNacimiento, genero, direccionResidencia, ciudad, telefono, email, password) VALUES (:documento, :nombres, :apellidos, :fechaNacimiento, :genero, :direccionResidencia, :ciudad, :telefono, :email, :password)";
+        $consulta = $this->conexion->prepare($sql);
         return $consulta->execute([
             ':documento' => $this->documento,
             ':nombres' => $this->nombres,
@@ -45,7 +46,8 @@ class Asociado
             ':direccionResidencia' => $this->direccionResidencia,
             ':ciudad' => $this->ciudad,
             ':telefono' => $this->telefono,
-            ':email' => $this->email
+            ':email' => $this->email,
+            ':password' => $this->passwordHash
         ]);
     }
 }
