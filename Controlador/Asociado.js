@@ -6,12 +6,13 @@ formulario.addEventListener("submit", async function (event) {
 
     const botonGuardar = formulario.querySelector('button[type="submit"]');
 
-    // Lee los campos del formulario y los convierte en un objeto
+    //Lee los campos del formulario y los convierte en un objeto
     const asociado = Object.fromEntries(new FormData(formulario).entries());
 
     if (asociado.password !== asociado.confirmarPassword) {
-        document.getElementById("mensajeRegistro").textContent =
+        document.getElementById("mensajeRegistro").textContent = 
             "Las contraseñas no coinciden.";
+        return;
     }
 
     delete asociado.confirmarPassword;
@@ -27,7 +28,7 @@ formulario.addEventListener("submit", async function (event) {
             body: JSON.stringify(asociado),
         });
 
-        // pasar la respuest Json a un objeto de JavaScript
+        //pasar la respuest Json a un objeto de JavaScript
         const resultado = await respuesta.json();
 
         document.getElementById("mensajeRegistro").textContent = resultado.mensaje;
@@ -37,7 +38,7 @@ formulario.addEventListener("submit", async function (event) {
         }
     } catch (error) {
         console.error("Error al enviar el formulario:", error);
-        document.getElementById("mensajeRegistro").textContent =
+        document.getElementById("mensajeRegistro").textContent = 
             "Ocurrió un error al enviar el formulario. Por favor, inténtalo de nuevo.";
     } finally {
         botonGuardar.disabled = false; // Habilitar el botón después de procesar la solicitud.
