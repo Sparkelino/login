@@ -1,32 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const logueado = localStorage.getItem('logueado');
-    
-    if (logueado !== 'true') {
-        window.location.href = 'login.html';
+    const Logueado =localStorage.getItem('logueado');
+
+    if (Logueado !== 'true') {
+        window.location.href = '../Vista/login.html';
         return;
     }
 
     const nombre = localStorage.getItem('nombre');
     const rol = localStorage.getItem('rol');
 
-    const nombreUsuarioEl = document.getElementById('nombreUsuario');
-    if (nombreUsuarioEl && nombre) {
-        nombreUsuarioEl.textContent = `${nombre} (${rol})`;
+    document.getElementById('NombreUsuario').textContent = nombre;
+
+    if (rol === 'Administrador') {
+        document.getElementById('TarjetasAdministrador').classList.remove('d-none');
+        document.getElementById('TarjetaAsociados').classList.add('d-none');
+    }else{
+        document.getElementById('TarjetasAdministrador').classList.add('d-none');
+        document.getElementById('TarjetaAsociados').classList.remove('d-none');  
     }
-
-    const contenedorAdmin = document.getElementById('tarjetaAdmin');
-    const contenedorAsociado = document.getElementById('tarjetaAsociado');
-
-    if (rol === 'admin') {
-        if (contenedorAdmin) contenedorAdmin.classList.remove('d-none');
-        if (contenedorAsociado) contenedorAsociado.classList.add('d-none');
-    } else {
-        if (contenedorAdmin) contenedorAdmin.classList.add('d-none');
-        if (contenedorAsociado) contenedorAsociado.classList.remove('d-none');
-    }    
 });
 
-function cerrarSesion() {
-    localStorage.clear();
-    window.location.href = 'login.html';
+async function cerrarSesion() {
+    try{
+        const respuesta = await fetch("../Modelo/cerrarSesion.php", 
+            {method: "POST"
+            });
+
+            if (!respuesta.ok) {
+                throw new Error("Error al cerrar sesion");
+            }
+      localStorage.clear();
+      window.location.href = "../Vista/login.html";
+    }catch(error){
+        console.error("Error al cerrar sesion:", error);
+    }
 }

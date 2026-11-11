@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(230, 163, 228, 0.1);
+    }
+
+    body {
+        background-color: #fff0f5;
+    }
+
+    h2 {
+        color: #c45d83;
+        font-weight: bold;
+    }
+
+    .form-control,
+    .form-select {
+        border: 1px solid #edc3d3;
+        border-radius: 8px;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #d77e9e;
+        box-shadow: 0 0 5px #edc3d3;
+    }
+
+    .btn-danger {
+        background-color: #c45d83;
+        border-color: #c45d83;
+    }
+
+    .btn-danger:hover {
+        background-color: #a94369;
+    }
+</style>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Registro de Pago</h2>
+        <form>
+            <label for="asociado" class="form-label">Nombre del asociado:</label>
+            <input type="text" class="form-control mb-3" id="asociado" name="asociado"
+                placeholder="Ingrese el nombre del asociado">
+
+            <label for="documento" class="form-label">Número de documento:</label>
+            <input type="number" class="form-control mb-3" id="documento" name="documento"
+                placeholder="Ingrese el documento">
+
+            <label for="concepto" class="form-label">Concepto del pago:</label>
+            <select class="form-select mb-3" id="concepto" name="concepto">
+                <option value="">Seleccione el concepto</option>
+                <option>Mensualidad</option>
+                <option>Inscripción</option>
+                <option>Actividad</option>
+                <option>Otro</option>
+            </select>
+
+            <label for="valor" class="form-label">Valor del pago:</label>
+            <input type="number" class="form-control mb-3" id="valor" name="valor" placeholder="Ingrese el valor">
+
+            <label for="fecha" class="form-label">Fecha del pago:</label>
+            <input type="date" class="form-control mb-3" id="fecha" name="fecha">
+
+            <label for="metodo" class="form-label">Método de pago:</label>
+            <select class="form-select mb-3" id="metodo" name="metodo">
+                <option value="">Seleccione un método</option>
+                <option>Efectivo</option>
+                <option>Transferencia</option>
+                <option>Consignación</option>
+                <option>Tarjeta</option>
+            </select>
+
+            <label for="referencia" class="form-label">Número de referencia:</label>
+            <input type="text" class="form-control mb-3" id="referencia" name="referencia"
+                placeholder="Número de comprobante (opcional)">
+
+            <label for="observaciones" class="form-label">Observaciones:</label>
+            <textarea class="form-control mb-3" id="observaciones" name="observaciones"
+                placeholder="Observaciones del pago"></textarea>
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="reset" class="btn btn-light">Limpiar</button>
+                <button type="button" class="btn btn-secondary">Cancelar</button>
+                <button type="submit" class="btn btn-danger">Registrar pago</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

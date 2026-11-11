@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Préstamos | Club Acerías</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style>
+    .container {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(196, 93, 131, 0.15);
+    }
+
+    body {
+        background-color: #fff0f5;
+    }
+
+    h2 {
+        color: #c45d83;
+        font-weight: bold;
+    }
+
+    .form-label {
+        color: #765566;
+        font-weight: 600;
+    }
+
+    .form-control,
+    .form-select {
+        border: 1px solid #edc3d3;
+        border-radius: 8px;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #d77e9e;
+        box-shadow: 0 0 5px #edc3d3;
+    }
+
+    .btn-danger {
+        background-color: #c45d83;
+        border-color: #c45d83;
+    }
+
+    .btn-danger:hover {
+        background-color: #a94369;
+        border-color: #a94369;
+    }
+
+    .seccion {
+        color: #b65378;
+        font-size: 17px;
+        font-weight: bold;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+</style>
+
+<body>
+
+    <div class="container mt-5">
+
+        <h2 class="text-center mb-2">Registro de Préstamos</h2>
+        <form>
+            <h5 class="seccion">Información del asociado</h5>
+            <label for="documento" class="form-label">
+                Número de documento:
+            </label>
+            <input type="number" class="form-control mb-3"
+                id="documento" name="documento"
+                placeholder="Ingrese el documento del asociado">
+            <label for="asociado" class="form-label">
+                Nombre del asociado:
+            </label>
+            <input type="text" class="form-control mb-3"
+                id="asociado" name="asociado"
+                placeholder="Ingrese el nombre completo">
+            <h5 class="seccion">Información del préstamo</h5>
+            <label for="elemento" class="form-label">
+                Elemento o recurso prestado:
+            </label>
+            <select class="form-select mb-3" id="elemento" name="elemento">
+                <option value="">Seleccione un elemento</option>
+                <option>Balón</option>
+                <option>Uniforme</option>
+                <option>Implementos deportivos</option>
+                <option>Equipo de sonido</option>
+                <option>Otro</option>
+            </select>
+
+            <label for="cantidad" class="form-label">
+                Cantidad:
+            </label>
+
+            <input type="number" class="form-control mb-3"
+                id="cantidad" name="cantidad"
+                min="1" placeholder="Ingrese la cantidad">
+
+            <label for="fechaPrestamo" class="form-label">
+                Fecha del préstamo:
+            </label>
+
+            <input type="date" class="form-control mb-3"
+                id="fechaPrestamo" name="fechaPrestamo">
+
+            <label for="fechaDevolucion" class="form-label">
+                Fecha de devolución:
+            </label>
+
+            <input type="date" class="form-control mb-3"
+                id="fechaDevolucion" name="fechaDevolucion">
+
+        
+
+            <h5 class="seccion">Estado del préstamo</h5>
+
+            <label for="estado" class="form-label">
+                Estado:
+            </label>
+
+            <select class="form-select mb-3" id="estado" name="estado">
+                <option value="">Seleccione un estado</option>
+                <option>Pendiente</option>
+                <option>Entregado</option>
+                <option>Devuelto</option>
+                <option>Retrasado</option>
+            </select>
+
+            <label for="observaciones" class="form-label">
+                Observaciones:
+            </label>
+
+            <textarea class="form-control mb-3"
+                id="observaciones" name="observaciones"
+                rows="3"
+                placeholder="Ingrese alguna observación sobre el préstamo"></textarea>
+
+  
+
+            <div class="d-flex justify-content-end gap-2 mt-4 flex-wrap">
+
+                <button type="reset" class="btn btn-light">
+                    Limpiar
+                </button>
+
+                <button type="button" class="btn btn-secondary">
+                    Cancelar
+                </button>
+
+                <button type="submit" class="btn btn-danger">
+                    Registrar préstamo
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
